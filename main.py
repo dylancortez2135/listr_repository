@@ -5,8 +5,6 @@ import os
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import psycopg
-from IPython.display import display
-import sys
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 load_dotenv()
@@ -239,3 +237,4 @@ def StudentLogging(login_data : StudentCredentials):
                     student_data.append(row)
             student_showable = pd.DataFrame(student_data, columns=['student_number', 'year_level', 'general_weighted_average', 'academic_honors'])
             return student_showable.to_dict(orient='records')
+
